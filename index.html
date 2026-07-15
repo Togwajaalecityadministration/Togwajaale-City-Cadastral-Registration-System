@@ -12,9 +12,13 @@
     
     <style>
         /* ============================================
-           GLOBAL STYLES
+           GLOBAL STYLES - EYE-FRIENDLY
            ============================================ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0a0e17;
@@ -22,6 +26,8 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
+
+        /* ===== SCROLLBAR ===== */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a1f2e; border-radius: 10px; }
         ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #00d4ff, #007bff); border-radius: 10px; }
@@ -42,25 +48,25 @@
         }
         #loginScreen .login-box .logo { text-align: center; margin-bottom: 25px; }
         #loginScreen .login-box .logo img { width: 80px; height: 80px; border-radius: 50%; border: 4px solid #00d4ff; background: white; padding: 5px; margin-bottom: 10px; }
-        #loginScreen .login-box .logo h1 { font-size: 22px; background: linear-gradient(135deg, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 8px; }
-        #loginScreen .login-box .logo p { color: rgba(255,255,255,0.4); font-size: 13px; }
+        #loginScreen .login-box .logo h1 { font-size: 22px; background: linear-gradient(135deg, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 8px; text-transform: lowercase; }
+        #loginScreen .login-box .logo p { color: rgba(255,255,255,0.4); font-size: 13px; text-transform: lowercase; }
         #loginScreen .login-box .form-group { margin-bottom: 14px; position: relative; }
-        #loginScreen .login-box .form-group label { display: block; color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+        #loginScreen .login-box .form-group label { display: block; color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600; margin-bottom: 5px; text-transform: lowercase; }
         #loginScreen .login-box .form-group input { width: 100%; padding: 11px 14px; border: 1px solid rgba(0,212,255,0.15); border-radius: 10px; background: rgba(255,255,255,0.04); color: #e0e8f0; font-size: 14px; padding-right: 40px; text-transform: lowercase; }
         #loginScreen .login-box .form-group input:focus { border-color: #00d4ff; outline: none; box-shadow: 0 0 25px rgba(0,212,255,0.08); }
         #loginScreen .login-box .form-group .toggle-password { position: absolute; right: 15px; top: 38px; cursor: pointer; color: rgba(255,255,255,0.4); }
         #loginScreen .login-box .form-group .toggle-password:hover { color: #00d4ff; }
-        #loginScreen .login-box .form-group .prediction-text { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 3px; font-style: italic; }
-        #loginScreen .login-box .btn-primary { width: 100%; padding: 13px; background: linear-gradient(135deg, #00d4ff, #007bff); border: none; border-radius: 10px; color: white; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+        #loginScreen .login-box .form-group .prediction-text { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 3px; font-style: italic; text-transform: lowercase; }
+        #loginScreen .login-box .btn-primary { width: 100%; padding: 13px; background: linear-gradient(135deg, #00d4ff, #007bff); border: none; border-radius: 10px; color: white; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; text-transform: lowercase; }
         #loginScreen .login-box .btn-primary:hover { transform: scale(1.02); box-shadow: 0 0 40px rgba(0,212,255,0.2); }
-        #loginScreen .login-box .btn-secondary { width: 100%; padding: 13px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: rgba(255,255,255,0.7); font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; }
+        #loginScreen .login-box .btn-secondary { width: 100%; padding: 13px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: rgba(255,255,255,0.7); font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 8px; text-transform: lowercase; }
         #loginScreen .login-box .btn-secondary:hover { background: rgba(255,255,255,0.1); }
-        #loginScreen .login-box .link-text { text-align: center; margin-top: 14px; color: rgba(255,255,255,0.4); font-size: 13px; }
+        #loginScreen .login-box .link-text { text-align: center; margin-top: 14px; color: rgba(255,255,255,0.4); font-size: 13px; text-transform: lowercase; }
         #loginScreen .login-box .link-text a { color: #00d4ff; cursor: pointer; text-decoration: none; font-weight: 600; }
         #loginScreen .login-box .link-text a:hover { text-decoration: underline; }
-        #loginScreen .login-box .error-msg { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.2); color: #ff6b6b; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 12px; display: none; }
+        #loginScreen .login-box .error-msg { background: rgba(255,107,107,0.1); border: 1px solid rgba(255,107,107,0.2); color: #ff6b6b; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 12px; display: none; text-transform: lowercase; }
         #loginScreen .login-box .error-msg.show { display: block; }
-        #loginScreen .login-box .success-msg { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: #00d4ff; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 12px; display: none; }
+        #loginScreen .login-box .success-msg { background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.2); color: #00d4ff; padding: 10px 14px; border-radius: 10px; font-size: 13px; margin-bottom: 12px; display: none; text-transform: lowercase; }
         #loginScreen .login-box .success-msg.show { display: block; }
 
         /* ===== LOGOUT OVERLAY ===== */
@@ -68,10 +74,10 @@
         #logoutOverlay.show { display: flex; }
         #logoutOverlay .logout-box { background: rgba(16,22,36,0.95); padding: 40px; border-radius: 24px; border: 1px solid rgba(0,212,255,0.15); text-align: center; max-width: 400px; width: 90%; }
         #logoutOverlay .logout-box i { font-size: 48px; color: #ff6b6b; margin-bottom: 15px; }
-        #logoutOverlay .logout-box h2 { color: white; margin-bottom: 10px; }
-        #logoutOverlay .logout-box p { color: rgba(255,255,255,0.5); margin-bottom: 25px; }
+        #logoutOverlay .logout-box h2 { color: white; margin-bottom: 10px; text-transform: lowercase; }
+        #logoutOverlay .logout-box p { color: rgba(255,255,255,0.5); margin-bottom: 25px; text-transform: lowercase; }
         #logoutOverlay .logout-box .btn-group { display: flex; gap: 12px; justify-content: center; }
-        #logoutOverlay .logout-box .btn-group button { padding: 10px 30px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        #logoutOverlay .logout-box .btn-group button { padding: 10px 30px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-transform: lowercase; }
         #logoutOverlay .logout-box .btn-group .btn-yes { background: linear-gradient(135deg, #ff6b6b, #ee5a24); color: white; }
         #logoutOverlay .logout-box .btn-group .btn-no { background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1); }
         #logoutOverlay .logout-box .btn-group button:hover { transform: scale(1.05); }
@@ -79,7 +85,7 @@
         /* ===== HEADER ===== */
         .header {
             background: linear-gradient(135deg, #0a0e17, #0f1a2e);
-            border-bottom: 1px solid rgba(0,212,255,0.15);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.15);
             padding: 18px 30px;
             display: flex;
             justify-content: space-between;
@@ -90,6 +96,7 @@
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
+            display: none;
         }
         .header .brand {
             display: flex;
@@ -105,17 +112,19 @@
             padding: 3px;
         }
         .header .brand h1 {
-            font-size: 18px;
-            background: linear-gradient(135deg, #00d4ff, #007bff);
+            font-size: 20px;
+            background: linear-gradient(135deg, #00d4ff, #007bff, #00d4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 700;
+            text-transform: lowercase;
         }
         .header .brand small {
             display: block;
-            font-size: 10px;
+            font-size: 11px;
             color: rgba(255,255,255,0.3);
             -webkit-text-fill-color: rgba(255,255,255,0.3);
+            text-transform: lowercase;
         }
         .header .header-actions {
             display: flex;
@@ -124,12 +133,13 @@
             flex-wrap: wrap;
         }
         .header .header-actions .badge {
-            background: rgba(0,212,255,0.1);
-            border: 1px solid rgba(0,212,255,0.2);
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 11px;
             color: #00d4ff;
+            text-transform: lowercase;
         }
         .header .header-actions .btn {
             padding: 8px 20px;
@@ -142,6 +152,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
+            text-transform: lowercase;
         }
         .btn-login { background: linear-gradient(135deg, #00d4ff, #007bff); color: white; }
         .btn-login:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,212,255,0.3); }
@@ -159,13 +170,16 @@
         .btn-outline:hover { background: #00d4ff; color: #0a0e17; }
 
         /* ===== MAIN LAYOUT ===== */
-        .main { display: flex; min-height: calc(100vh - 80px); }
+        .main {
+            display: none;
+            min-height: calc(100vh - 80px);
+        }
 
         /* ===== LEFT NAVIGATION - MULTI-COLOR ===== */
         .sidebar {
             width: 280px;
-            background: rgba(10,14,23,0.95);
-            border-right: 1px solid rgba(0,212,255,0.1);
+            background: rgba(10, 14, 23, 0.95);
+            border-right: 1px solid rgba(0, 212, 255, 0.1);
             padding: 20px 0;
             overflow-y: auto;
             flex-shrink: 0;
@@ -196,14 +210,13 @@
             text-transform: lowercase;
         }
         .sidebar .nav-item:hover {
-            background: rgba(0,212,255,0.08);
+            background: rgba(0, 212, 255, 0.08);
             color: white;
             border-left-color: #00d4ff;
         }
         .sidebar .nav-item.active { background: linear-gradient(90deg, rgba(0,212,255,0.12), transparent); color: #00d4ff; border-left-color: #00d4ff; }
         .sidebar .nav-item i { width: 20px; font-size: 15px; }
         .sidebar .nav-item .badge { margin-left: auto; background: rgba(0,212,255,0.12); padding: 1px 10px; border-radius: 12px; font-size: 10px; color: #00d4ff; }
-        .sidebar .nav-divider { height: 1px; background: linear-gradient(90deg, rgba(0,212,255,0.15), transparent); margin: 8px 18px; }
 
         /* Multi-Color Navigation Items */
         .sidebar .nav-item.color-1 i { color: #00d4ff; }
@@ -221,13 +234,20 @@
         .sidebar .nav-item.color-13 i { color: #1a5a3a; }
         .sidebar .nav-item.color-14 i { color: #7f8c8d; }
 
+        .sidebar .nav-divider { height: 1px; background: linear-gradient(90deg, rgba(0,212,255,0.15), transparent); margin: 8px 18px; }
+
         /* ===== CONTENT AREA ===== */
-        .content { flex: 1; padding: 25px 30px 100px 30px; overflow-y: auto; max-height: calc(100vh - 80px); }
+        .content {
+            flex: 1;
+            padding: 25px 30px 100px 30px;
+            overflow-y: auto;
+            max-height: calc(100vh - 80px);
+        }
 
         /* ===== PAGE HEADER ===== */
         .page-header { margin-bottom: 25px; }
-        .page-header h2 { font-size: 24px; background: linear-gradient(135deg, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 12px; }
-        .page-header p { color: rgba(255,255,255,0.4); font-size: 14px; margin-top: 4px; }
+        .page-header h2 { font-size: 24px; background: linear-gradient(135deg, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; gap: 12px; text-transform: lowercase; }
+        .page-header p { color: rgba(255,255,255,0.4); font-size: 14px; margin-top: 4px; text-transform: lowercase; }
 
         /* ===== FORM SECTIONS ===== */
         .form-section { display: none; animation: fadeIn 0.4s ease; }
@@ -235,7 +255,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ===== CATEGORY CARDS ===== */
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; margin-bottom: 25px; }
+        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin-bottom: 25px; }
         .category-card {
             background: rgba(16,22,36,0.85);
             backdrop-filter: blur(10px);
@@ -248,8 +268,8 @@
         .category-card:hover { transform: translateY(-4px); border-color: rgba(0,212,255,0.2); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
         .category-card .cat-icon { font-size: 32px; margin-bottom: 10px; }
         .category-card h3 { font-size: 16px; color: #00d4ff; margin-bottom: 4px; text-transform: lowercase; }
-        .category-card p { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
-        .category-card .cat-count { font-size: 11px; color: rgba(255,255,255,0.3); background: rgba(0,212,255,0.05); padding: 2px 12px; border-radius: 12px; display: inline-block; }
+        .category-card p { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 10px; text-transform: lowercase; }
+        .category-card .cat-count { font-size: 11px; color: rgba(255,255,255,0.3); background: rgba(0,212,255,0.05); padding: 2px 12px; border-radius: 12px; display: inline-block; text-transform: lowercase; }
 
         /* ===== FORM CONTAINER ===== */
         .form-container {
@@ -274,7 +294,7 @@
             padding-bottom: 12px;
             text-transform: lowercase;
         }
-        .form-container .form-title .code { font-size: 11px; background: rgba(0,212,255,0.1); padding: 2px 12px; border-radius: 12px; color: rgba(255,255,255,0.3); font-weight: 400; }
+        .form-container .form-title .code { font-size: 11px; background: rgba(0,212,255,0.1); padding: 2px 12px; border-radius: 12px; color: rgba(255,255,255,0.3); font-weight: 400; text-transform: uppercase; }
 
         /* ===== FORM GRID ===== */
         .form-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px 20px; }
@@ -316,7 +336,7 @@
         }
         .file-upload:hover { border-color: #00d4ff; background: rgba(0,212,255,0.05); }
         .file-upload i { font-size: 24px; color: #00d4ff; display: block; margin-bottom: 4px; }
-        .file-upload small { color: rgba(255,255,255,0.3); font-size: 11px; }
+        .file-upload small { color: rgba(255,255,255,0.3); font-size: 11px; text-transform: lowercase; }
         .file-upload input { display: none; }
 
         /* ===== COORDINATE SECTION ===== */
@@ -340,7 +360,7 @@
         .btn-sm { padding: 6px 14px; font-size: 11px; border-radius: 20px; }
 
         /* ===== STATUS BADGE ===== */
-        .status-badge { padding: 3px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-block; }
+        .status-badge { padding: 3px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; display: inline-block; text-transform: lowercase; }
         .status-badge.pending { background: #fff3cd; color: #856404; }
         .status-badge.approved { background: #d4edda; color: #155724; }
         .status-badge.rejected { background: #f8d7da; color: #721c24; }
@@ -355,7 +375,7 @@
             background: rgba(10,14,23,0.95);
             backdrop-filter: blur(15px);
             padding: 10px 30px;
-            display: flex;
+            display: none;
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid rgba(0,212,255,0.08);
@@ -363,7 +383,7 @@
             gap: 10px;
             z-index: 1000;
         }
-        .bottom-bar .status { display: flex; align-items: center; gap: 20px; font-size: 12px; color: rgba(255,255,255,0.4); }
+        .bottom-bar .status { display: flex; align-items: center; gap: 20px; font-size: 12px; color: rgba(255,255,255,0.4); text-transform: lowercase; }
         .bottom-bar .status .dot { width: 8px; height: 8px; border-radius: 50%; background: #00d4ff; display: inline-block; animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         .bottom-bar .bottom-actions { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -416,7 +436,7 @@
                     <label><i class="fas fa-lock"></i> password <small style="color:rgba(255,255,255,0.3);">(6+ chars, letters & numbers)</small></label>
                     <input type="password" id="loginPassword" placeholder="enter your password" style="padding-right:40px;" />
                     <i class="fas fa-eye toggle-password" id="loginPasswordToggle" onclick="togglePassword('loginPassword','loginPasswordToggle')"></i>
-                    <div class="prediction-text">💡 default: mu1234c (admin) or mo12345m (admin)</div>
+                    <div class="prediction-text">💡 default: mu1234i (admin) or mo12345m (admin)</div>
                 </div>
                 <button class="btn-primary" onclick="handleLogin()"><i class="fas fa-sign-in-alt"></i> login</button>
                 <div class="link-text">don't have an account? <a onclick="showRegister()">create account</a></div>
@@ -478,12 +498,12 @@
     </div>
 
     <!-- ===== HEADER ===== -->
-    <header class="header" id="mainHeader" style="display:none;">
+    <header class="header" id="mainHeader">
         <div class="brand">
             <img src="logo.png" alt="logo" onerror="this.style.display='none'" />
             <div>
-                <h1>tog-wajaale-cadastral-registration</h1>
-                <small>utm zone 38n • management system</small>
+                <h1>tog-wajaale cadastral registration</h1>
+                <small>utm zone 38n • integrated management system</small>
             </div>
         </div>
         <div class="header-actions">
@@ -498,7 +518,7 @@
     </header>
 
     <!-- ===== MAIN CONTENT ===== -->
-    <div class="main" id="mainContent" style="display:none;">
+    <div class="main" id="mainContent">
 
         <!-- ===== SIDEBAR - MULTI-COLOR ===== -->
         <nav class="sidebar">
@@ -563,43 +583,52 @@
                 <i class="fas fa-chart-bar"></i><span>reports</span>
                 <span class="badge">6</span>
             </div>
+
+            <div class="nav-divider"></div>
+            <div class="nav-item color-14" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i><span>logout</span>
+            </div>
         </nav>
 
         <!-- ===== CONTENT ===== -->
         <div class="content">
 
-            <!-- ===== DASHBOARD ===== -->
+            <!-- ============================================================
+            DASHBOARD
+            ============================================================ -->
             <div id="section-dashboard" class="form-section active">
                 <div class="page-header">
                     <h2><i class="fas fa-chart-pie"></i> dashboard</h2>
                     <p>overview of all cadastral registration activities</p>
                 </div>
+
                 <div class="category-grid">
                     <div class="category-card" style="border-left: 4px solid #00d4ff;">
-                        <div class="cat-icon"></div>
+                        <div class="cat-icon">📋</div>
                         <h3>total applications</h3>
                         <p>all registration applications</p>
                         <span class="cat-count">0 pending</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #00b894;">
-                        <div class="cat-icon"></div>
+                        <div class="cat-icon">✅</div>
                         <h3>approved registrations</h3>
                         <p>successfully registered</p>
                         <span class="cat-count">0 approved</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #f39c12;">
-                        <div class="cat-icon"></div>
+                        <div class="cat-icon">💰</div>
                         <h3>revenue collected</h3>
                         <p>total fees and taxes</p>
                         <span class="cat-count">0.00 etb</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #ff6b6b;">
-                        <div class="cat-icon"></div>
+                        <div class="cat-icon">📊</div>
                         <h3>total parcels</h3>
                         <p>all registered parcels</p>
                         <span class="cat-count">0 parcels</span>
                     </div>
                 </div>
+
                 <div class="form-container">
                     <div class="form-title"><i class="fas fa-info-circle"></i> system information <span class="code">utm zone 38n</span></div>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; color:rgba(255,255,255,0.5); font-size:13px;">
@@ -611,14 +640,21 @@
                 </div>
             </div>
 
-            <!-- ===== APPLICATION SECTION ===== -->
+            <!-- ============================================================
+            APPLICATION SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-application" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-file-signature"></i> application & initial registration</h2>
                     <p>6 forms for land application and initial registration</p>
                 </div>
+
+                <!-- APP-001 -->
                 <div class="form-container">
-                    <div class="form-title"><i class="fas fa-file-signature"></i> app-001: land application form <span class="code">initial registration</span></div>
+                    <div class="form-title">
+                        <i class="fas fa-file-signature"></i> app-001: land application form
+                        <span class="code">initial registration</span>
+                    </div>
                     <div class="form-grid">
                         <div class="form-group"><label><i class="fas fa-hashtag"></i> application no.</label><input type="text" value="app-2026-0001" readonly /></div>
                         <div class="form-group"><label><i class="fas fa-calendar"></i> application date</label><input type="date" /></div>
@@ -633,273 +669,1458 @@
                         <button class="btn btn-warning"><i class="fas fa-undo"></i> reset</button>
                     </div>
                 </div>
+
+                <!-- APP-002 -->
+                <div class="form-container">
+                    <div class="form-title">
+                        <i class="fas fa-map-pin"></i> app-002: parcel identification form
+                        <span class="code">location details</span>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="pcl-2026-0001" /></div>
+                        <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele <span class="required">*</span></label><input type="text" placeholder="kebele name" /></div>
+                        <div class="form-group"><label><i class="fas fa-map-pin"></i> zone <span class="required">*</span></label><input type="text" placeholder="zone name" /></div>
+                        <div class="form-group"><label><i class="fas fa-cube"></i> block</label><input type="text" placeholder="block number" /></div>
+                        <div class="form-group"><label><i class="fas fa-vector-square"></i> plot number</label><input type="text" placeholder="plot number" /></div>
+                        <div class="form-group"><label><i class="fas fa-tag"></i> land category</label>
+                            <select><option>residential</option><option>commercial</option><option>mixed use</option><option>service</option></select>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-success"><i class="fas fa-save"></i> save parcel</button>
+                        <button class="btn btn-warning"><i class="fas fa-undo"></i> reset</button>
+                    </div>
+                </div>
+
+                <!-- APP-003 to APP-006 (Condensed) -->
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-check-circle"></i> app-003: applicant declaration</div>
+                        <div class="form-grid" style="grid-template-columns:1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> full name</label><input type="text" placeholder="full name" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-pen"></i> declaration</label><textarea rows="2" placeholder="i hereby declare that the information provided is true..."></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success btn-sm"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-handshake"></i> app-004: consent of spouse</div>
+                        <div class="form-grid" style="grid-template-columns:1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> spouse name</label><input type="text" placeholder="spouse full name" /></div>
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> national id</label><input type="text" placeholder="id number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success btn-sm"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-ruler"></i> app-005: boundary verification</div>
+                        <div class="form-grid" style="grid-template-columns:1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> neighbor name</label><input type="text" placeholder="neighbor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> boundary confirmed</label>
+                                <select><option>yes</option><option>no</option></select>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success btn-sm"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gavel"></i> app-006: power of attorney</div>
+                        <div class="form-grid" style="grid-template-columns:1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> attorney name</label><input type="text" placeholder="attorney name" /></div>
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> id number</label><input type="text" placeholder="id number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> expiry date</label><input type="date" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success btn-sm"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
             </div>
 
-            <!-- ===== OWNER SECTION ===== -->
+            <!-- ============================================================
+            OWNER SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-owner" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-user"></i> owner & personal information</h2>
                     <p>6 forms for owner registration and verification</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-user-circle"></i> own-001: owner registration</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-user"></i> full name <span class="required">*</span></label><input type="text" placeholder="full name" /></div>
-                        <div class="form-group"><label><i class="fas fa-phone"></i> telephone <span class="required">*</span></label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
-                        <div class="form-group"><label><i class="fas fa-envelope"></i> email</label><input type="email" placeholder="email" /></div>
-                        <div class="form-group"><label><i class="fas fa-map-pin"></i> address</label><input type="text" placeholder="address" /></div>
-                        <div class="form-group"><label><i class="fas fa-id-card"></i> national id <span class="required">*</span></label><input type="text" placeholder="id number" /></div>
-                        <div class="form-group"><label><i class="fas fa-camera"></i> id photo</label>
-                            <div class="file-upload" onclick="this.querySelector('input').click()">
-                                <i class="fas fa-camera"></i>
-                                <small>upload id photo</small>
-                                <input type="file" accept="image/*" />
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-user-circle"></i> own-001: owner registration</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> full name <span class="required">*</span></label><input type="text" placeholder="full name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> telephone <span class="required">*</span></label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
+                            <div class="form-group"><label><i class="fas fa-envelope"></i> email</label><input type="email" placeholder="email" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> address</label><input type="text" placeholder="address" /></div>
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> national id <span class="required">*</span></label><input type="text" placeholder="id number" /></div>
+                            <div class="form-group"><label><i class="fas fa-camera"></i> id photo</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-camera"></i>
+                                    <small>upload id photo</small>
+                                    <input type="file" accept="image/*" />
+                                </div>
                             </div>
                         </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save owner</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save owner</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-users"></i> own-002: joint ownership</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> co-owner 1</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> co-owner 2</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> co-owner 3</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> co-owner 4</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-percent"></i> ownership shares</label><input type="text" placeholder="e.g. 50%, 25%, 25%" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save joint owners</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-building"></i> own-003: corporate ownership</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-building"></i> company name <span class="required">*</span></label><input type="text" placeholder="company name" /></div>
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> registration no.</label><input type="text" placeholder="company registration" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> representative</label><input type="text" placeholder="rep name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> phone</label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> business license</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload license</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save corporate</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gavel"></i> own-004: legal representative</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> representative name</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> id number</label><input type="text" placeholder="id number" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> court order</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload court order</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> effective date</label><input type="date" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-tree"></i> own-005: heir registration</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> deceased name</label><input type="text" placeholder="deceased name" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date of death</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> heir 1</label><input type="text" placeholder="heir name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> heir 2</label><input type="text" placeholder="heir name" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> inheritance certificate</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save heirs</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-id-card"></i> own-006: identity verification</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> national id <span class="required">*</span></label><input type="text" placeholder="id number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> expiry date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-flag"></i> issuing authority</label><input type="text" placeholder="authority name" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-camera"></i> id photos</label>
+                                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                                    <div class="file-upload" onclick="this.querySelector('input').click()">
+                                        <i class="fas fa-id-card"></i>
+                                        <small>front</small>
+                                        <input type="file" accept="image/*" />
+                                    </div>
+                                    <div class="file-upload" onclick="this.querySelector('input').click()">
+                                        <i class="fas fa-id-card"></i>
+                                        <small>back</small>
+                                        <input type="file" accept="image/*" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> verify</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== PARCEL SECTION ===== -->
+            <!-- ============================================================
+            PARCEL SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-parcel" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-map-pin"></i> parcel information</h2>
                     <p>6 forms for parcel data and land classification</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-file-alt"></i> prc-001: parcel data sheet</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id <span class="required">*</span></label><input type="text" placeholder="pcl-2026-0001" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele</label><input type="text" placeholder="kebele" /></div>
-                        <div class="form-group"><label><i class="fas fa-map-pin"></i> zone</label><input type="text" placeholder="zone" /></div>
-                        <div class="form-group"><label><i class="fas fa-cube"></i> block</label><input type="text" placeholder="block" /></div>
-                        <div class="form-group"><label><i class="fas fa-vector-square"></i> plot no.</label><input type="text" placeholder="plot number" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-alt"></i> prc-001: parcel data sheet</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id <span class="required">*</span></label><input type="text" placeholder="pcl-2026-0001" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele</label><input type="text" placeholder="kebele" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> zone</label><input type="text" placeholder="zone" /></div>
+                            <div class="form-group"><label><i class="fas fa-cube"></i> block</label><input type="text" placeholder="block" /></div>
+                            <div class="form-group"><label><i class="fas fa-vector-square"></i> plot no.</label><input type="text" placeholder="plot number" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save parcel</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save parcel</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-location-dot"></i> prc-002: parcel location</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> region</label><input type="text" placeholder="region" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> woreda</label><input type="text" placeholder="woreda" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele</label><input type="text" placeholder="kebele" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> zone</label><input type="text" placeholder="zone" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> land use</label>
+                                <select><option>agricultural</option><option>residential</option><option>commercial</option><option>industrial</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> land category</label>
+                                <select><option>urban</option><option>rural</option><option>peri-urban</option></select>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save location</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-ruler"></i> prc-003: land measurement</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-h"></i> length (m)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-v"></i> width (m)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-h"></i> north side</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-v"></i> east side</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-h"></i> south side</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrows-alt-v"></i> west side</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-ruler-combined"></i> total area (m²)</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-border-all"></i> prc-004: boundary description</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group full-width"><label><i class="fas fa-arrow-up"></i> north boundary</label><input type="text" placeholder="natural/artificial feature" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-arrow-right"></i> east boundary</label><input type="text" placeholder="natural/artificial feature" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-arrow-down"></i> south boundary</label><input type="text" placeholder="natural/artificial feature" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-arrow-left"></i> west boundary</label><input type="text" placeholder="natural/artificial feature" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> boundary remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save boundaries</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-vector-square"></i> prc-005: adjacent parcels</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-arrow-up"></i> north parcel</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrow-right"></i> east parcel</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrow-down"></i> south parcel</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrow-left"></i> west parcel</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-user"></i> adjacent owner names</label><input type="text" placeholder="owner names" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save adjacent</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-tags"></i> prc-006: land use classification</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-tag"></i> primary use</label>
+                                <select><option>residential</option><option>commercial</option><option>agricultural</option><option>industrial</option><option>institutional</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> secondary use</label>
+                                <select><option>none</option><option>mixed use</option><option>service</option><option>recreational</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-star"></i> land grade</label>
+                                <select><option>a</option><option>b</option><option>c</option><option>d</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-building"></i> zoning</label>
+                                <select><option>residential zone</option><option>commercial zone</option><option>industrial zone</option><option>mixed zone</option></select>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> zoning remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save classification</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== SURVEY SECTION ===== -->
+            <!-- ============================================================
+            SURVEY SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-survey" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-globe-africa"></i> coordinate & survey data</h2>
                     <p>6 forms for utm coordinates, survey reports, and mapping</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-globe-africa"></i> sur-001: utm coordinate form <span class="code">zone 38n</span></div>
-                    <div class="coord-section">
-                        <div class="coord-label"><i class="fas fa-vector-square"></i> parcel coordinates (utm zone 38n)</div>
-                        <div class="coord-grid">
-                            <div class="coord-pair"><label>p1</label><input type="number" step="0.001" placeholder="x1" /><input type="number" step="0.001" placeholder="y1" style="margin-top:3px;" /></div>
-                            <div class="coord-pair"><label>p2</label><input type="number" step="0.001" placeholder="x2" /><input type="number" step="0.001" placeholder="y2" style="margin-top:3px;" /></div>
-                            <div class="coord-pair"><label>p3</label><input type="number" step="0.001" placeholder="x3" /><input type="number" step="0.001" placeholder="y3" style="margin-top:3px;" /></div>
-                            <div class="coord-pair"><label>p4</label><input type="number" step="0.001" placeholder="x4" /><input type="number" step="0.001" placeholder="y4" style="margin-top:3px;" /></div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-globe-africa"></i> sur-001: utm coordinate form <span class="code">zone 38n</span></div>
+                        <div class="coord-section">
+                            <div class="coord-label"><i class="fas fa-vector-square"></i> parcel coordinates (utm zone 38n)</div>
+                            <div class="coord-grid">
+                                <div class="coord-pair"><label>p1</label><input type="number" step="0.001" placeholder="x1" /><input type="number" step="0.001" placeholder="y1" style="margin-top:3px;" /></div>
+                                <div class="coord-pair"><label>p2</label><input type="number" step="0.001" placeholder="x2" /><input type="number" step="0.001" placeholder="y2" style="margin-top:3px;" /></div>
+                                <div class="coord-pair"><label>p3</label><input type="number" step="0.001" placeholder="x3" /><input type="number" step="0.001" placeholder="y3" style="margin-top:3px;" /></div>
+                                <div class="coord-pair"><label>p4</label><input type="number" step="0.001" placeholder="x4" /><input type="number" step="0.001" placeholder="y4" style="margin-top:3px;" /></div>
+                            </div>
+                            <div style="margin-top:10px; padding:8px 12px; background:rgba(0,212,255,0.05); border-radius:6px; font-family:monospace; font-size:12px; color:#00d4ff;">
+                                x1,y1 | x2,y2 | x3,y3 | x4,y4
+                            </div>
                         </div>
-                        <div style="margin-top:10px; padding:8px 12px; background:rgba(0,212,255,0.05); border-radius:6px; font-family:monospace; font-size:12px; color:#00d4ff;">
-                            x1,y1 | x2,y2 | x3,y3 | x4,y4
-                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save coordinates</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save coordinates</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-clipboard-check"></i> sur-002: surveyor report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-user"></i> surveyor name</label><input type="text" placeholder="surveyor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-id-card"></i> license no.</label><input type="text" placeholder="license number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> survey date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> report no.</label><input type="text" placeholder="report number" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> survey findings</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save report</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-map"></i> sur-003: cadastral map</div>
+                        <div class="form-grid" style="grid-template-columns:1fr;">
+                            <div class="form-group"><label><i class="fas fa-map"></i> map sheet no.</label><input type="text" placeholder="sheet number" /></div>
+                            <div class="form-group"><label><i class="fas fa-vector-square"></i> parcel outline</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-map"></i>
+                                    <small>upload map image</small>
+                                    <input type="file" accept="image/*,.pdf" />
+                                </div>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-pen"></i> map description</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save map</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-crosshairs"></i> sur-004: control points</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-circle"></i> cp1</label><input type="text" placeholder="x,y" /></div>
+                            <div class="form-group"><label><i class="fas fa-circle"></i> cp2</label><input type="text" placeholder="x,y" /></div>
+                            <div class="form-group"><label><i class="fas fa-circle"></i> cp3</label><input type="text" placeholder="x,y" /></div>
+                            <div class="form-group"><label><i class="fas fa-circle"></i> cp4</label><input type="text" placeholder="x,y" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-ruler"></i> reference system</label><input type="text" placeholder="e.g. utm zone 38n" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save control points</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-chart-line"></i> sur-005: elevation data</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-arrow-up"></i> min elevation (m)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-arrow-down"></i> max elevation (m)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-wave-square"></i> average elevation</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-mountain"></i> terrain type</label>
+                                <select><option>flat</option><option>gentle slope</option><option>steep slope</option><option>hilly</option></select>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save elevation</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-book"></i> sur-006: gps field book</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-date"></i> field date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> field officer</label><input type="text" placeholder="officer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> equipment used</label><input type="text" placeholder="gps model" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> field notes</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload field notes</small>
+                                    <input type="file" accept=".pdf,.doc,.txt" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save field notes</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== DOCUMENT SECTION ===== -->
+            <!-- ============================================================
+            DOCUMENT SECTION (8 Forms)
+            ============================================================ -->
             <div id="section-document" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-file-alt"></i> documentary evidence</h2>
                     <p>8 forms for title deeds, agreements, and legal documents</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-file-signature"></i> doc-001: title deed</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> deed number <span class="required">*</span></label><input type="text" placeholder="d-2026-0001" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-file"></i> deed document</label>
-                            <div class="file-upload" onclick="this.querySelector('input').click()">
-                                <i class="fas fa-file-pdf"></i>
-                                <small>upload deed pdf</small>
-                                <input type="file" accept=".pdf,.jpg,.png" />
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-signature"></i> doc-001: title deed</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> deed number <span class="required">*</span></label><input type="text" placeholder="d-2026-0001" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> deed document</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <small>upload deed pdf</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
                             </div>
                         </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> register deed</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> register deed</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-contract"></i> doc-002: purchase agreement</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> contract no.</label><input type="text" placeholder="contract number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> agreement date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> buyer name</label><input type="text" placeholder="buyer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> seller name</label><input type="text" placeholder="seller name" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> purchase price</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> agreement pdf</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <small>upload agreement</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save agreement</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gift"></i> doc-003: gift deed</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> deed no.</label><input type="text" placeholder="gift deed number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> donor name</label><input type="text" placeholder="donor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> donee name</label><input type="text" placeholder="donee name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> gift deed file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload gift deed</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save gift deed</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-tree"></i> doc-004: inheritance certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> deceased name</label><input type="text" placeholder="deceased name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> heir name</label><input type="text" placeholder="heir name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> certificate file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save certificate</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gavel"></i> doc-005: court decree</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> case no.</label><input type="text" placeholder="case number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> decree date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> plaintiff</label><input type="text" placeholder="plaintiff name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> defendant</label><input type="text" placeholder="defendant name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> decree file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload decree</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save decree</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-contract"></i> doc-006: lease agreement</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> lease no.</label><input type="text" placeholder="lease number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> start date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> end date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> lessor</label><input type="text" placeholder="lessor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> lessee</label><input type="text" placeholder="lessee name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> rent amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> lease file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload lease</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save lease</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-hand-holding-usd"></i> doc-007: encumbrance certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> lender name</label><input type="text" placeholder="lender name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> encumbrance file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload file</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save encumbrance</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-ban"></i> doc-008: restrictive covenant</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> covenant no.</label><input type="text" placeholder="covenant number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> effective date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-pen"></i> restriction type</label><input type="text" placeholder="e.g. no construction, heritage" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> covenant file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload covenant</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> description</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save covenant</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== FINANCIAL SECTION ===== -->
+            <!-- ============================================================
+            FINANCIAL SECTION (8 Forms)
+            ============================================================ -->
             <div id="section-financial" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-money-bill-wave"></i> financial & taxation</h2>
                     <p>8 forms for land valuation, fees, and taxation</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-chart-line"></i> fin-001: land value assessment</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> assessment no.</label><input type="text" placeholder="assessment number" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> assessment date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> unit value (etb/m²)</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total value (etb)</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-chart-line"></i> fin-001: land value assessment</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> assessment no.</label><input type="text" placeholder="assessment number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> assessment date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> unit value (etb/m²)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total value (etb)</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-receipt"></i> fin-002: registration fee</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> receipt no.</label><input type="text" placeholder="receipt number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> payment date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> registration fee</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> service fee</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total paid</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> receipt file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload receipt</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-invoice"></i> fin-003: annual land tax</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> tax year</label><input type="number" placeholder="2026" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> taxable value</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-percent"></i> tax rate (%)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> annual tax</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> tax status</label>
+                                <select><option>paid</option><option>unpaid</option><option>partial</option></select>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-check-circle"></i> fin-004: tax clearance</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> clearance no.</label><input type="text" placeholder="clearance number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> tax year</label><input type="number" placeholder="2026" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total paid</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> clearance file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload clearance</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-money-bill-transfer"></i> fin-005: capital gains tax</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> assessment no.</label><input type="text" placeholder="assessment number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> purchase price</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> sale price</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> tax amount</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-stamp"></i> fin-006: stamp duty</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> stamp no.</label><input type="text" placeholder="stamp number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> transaction value</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-percent"></i> duty rate (%)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> duty amount</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> stamp file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload stamp</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-receipt"></i> fin-007: payment receipt</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> receipt no.</label><input type="text" placeholder="receipt number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> payment date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> payer name</label><input type="text" placeholder="payer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> amount paid</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> payment method</label>
+                                <select><option>cash</option><option>bank transfer</option><option>mobile money</option><option>check</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> reference no.</label><input type="text" placeholder="reference" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> receipt file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload receipt</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save receipt</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-invoice"></i> fin-008: tax exemption</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> exemption no.</label><input type="text" placeholder="exemption number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> exemption type</label>
+                                <select><option>government</option><option>charity</option><option>religious</option><option>educational</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> valid until</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> exemption file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload exemption</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save exemption</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== TRANSACTION SECTION ===== -->
+            <!-- ============================================================
+            TRANSACTION SECTION (7 Forms)
+            ============================================================ -->
             <div id="section-transaction" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-handshake"></i> transaction & transfer</h2>
                     <p>7 forms for land transfers, sales, and exchanges</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-file-signature"></i> trn-001: transfer application</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> application no.</label><input type="text" placeholder="application number" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> transferor name</label><input type="text" placeholder="transferor name" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> transferee name</label><input type="text" placeholder="transferee name" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> consideration</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-file"></i> transfer document</label>
-                            <div class="file-upload" onclick="this.querySelector('input').click()">
-                                <i class="fas fa-file-upload"></i>
-                                <small>upload transfer doc</small>
-                                <input type="file" accept=".pdf,.jpg,.png" />
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-signature"></i> trn-001: transfer application</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> application no.</label><input type="text" placeholder="application number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> transferor name</label><input type="text" placeholder="transferor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> transferee name</label><input type="text" placeholder="transferee name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> consideration</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> transfer document</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload transfer doc</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
                             </div>
                         </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> submit transfer</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> submit transfer</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-contract"></i> trn-002: sales agreement</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> agreement no.</label><input type="text" placeholder="agreement number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> seller name</label><input type="text" placeholder="seller name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> buyer name</label><input type="text" placeholder="buyer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> sale price</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> agreement file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload agreement</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save agreement</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gift"></i> trn-003: gift transfer</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> gift no.</label><input type="text" placeholder="gift number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> donor name</label><input type="text" placeholder="donor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> donee name</label><input type="text" placeholder="donee name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> gift deed file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload gift deed</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> gift remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save gift</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-tree"></i> trn-004: inheritance transfer</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> case no.</label><input type="text" placeholder="case number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> deceased name</label><input type="text" placeholder="deceased name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> heir name</label><input type="text" placeholder="heir name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> certificate file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save inheritance</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-vector-square"></i> trn-005: partition of land</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> partition no.</label><input type="text" placeholder="partition number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> original parcel</label><input type="text" placeholder="original parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> new parcel a</label><input type="text" placeholder="parcel a id" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> new parcel b</label><input type="text" placeholder="parcel b id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> partition file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload partition</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save partition</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-vector-square"></i> trn-006: consolidation of land</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> consolidation no.</label><input type="text" placeholder="consolidation number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel a</label><input type="text" placeholder="parcel a id" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel b</label><input type="text" placeholder="parcel b id" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> new parcel</label><input type="text" placeholder="new parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> consolidation file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload file</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save consolidation</button></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-exchange-alt"></i> trn-007: exchange of land</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> exchange no.</label><input type="text" placeholder="exchange number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner a</label><input type="text" placeholder="owner a name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel a</label><input type="text" placeholder="parcel a id" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner b</label><input type="text" placeholder="owner b name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel b</label><input type="text" placeholder="parcel b id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> exchange file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload exchange</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save exchange</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== MORTGAGE SECTION ===== -->
+            <!-- ============================================================
+            MORTGAGE SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-mortgage" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-home"></i> mortgage & encumbrance</h2>
                     <p>6 forms for mortgages, charges, and bank guarantees</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-hand-holding-usd"></i> mor-001: mortgage registration</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> mortgage no.</label><input type="text" placeholder="mortgage number" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> borrower name</label><input type="text" placeholder="borrower name" /></div>
-                        <div class="form-group"><label><i class="fas fa-university"></i> lender bank</label><input type="text" placeholder="bank name" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> loan amount</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group"><label><i class="fas fa-percent"></i> interest rate (%)</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> maturity date</label><input type="date" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-file"></i> mortgage file</label>
-                            <div class="file-upload" onclick="this.querySelector('input').click()">
-                                <i class="fas fa-file-upload"></i>
-                                <small>upload mortgage</small>
-                                <input type="file" accept=".pdf,.jpg,.png" />
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-hand-holding-usd"></i> mor-001: mortgage registration</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> mortgage no.</label><input type="text" placeholder="mortgage number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> borrower name</label><input type="text" placeholder="borrower name" /></div>
+                            <div class="form-group"><label><i class="fas fa-university"></i> lender bank</label><input type="text" placeholder="bank name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> loan amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-percent"></i> interest rate (%)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> maturity date</label><input type="date" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> mortgage file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload mortgage</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
                             </div>
                         </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> register mortgage</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> register mortgage</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-check-circle"></i> mor-002: mortgage release</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> release no.</label><input type="text" placeholder="release number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> release date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> borrower name</label><input type="text" placeholder="borrower name" /></div>
+                            <div class="form-group"><label><i class="fas fa-university"></i> lender bank</label><input type="text" placeholder="bank name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> amount released</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> release file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload release</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save release</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-invoice"></i> mor-003: charge registration</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> charge no.</label><input type="text" placeholder="charge number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> charge holder</label><input type="text" placeholder="charge holder name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> charge amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> charge file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload charge</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> description</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save charge</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gavel"></i> mor-004: caveat / lis pendens</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> caveat no.</label><input type="text" placeholder="caveat number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> lodgement date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> caveator name</label><input type="text" placeholder="caveator name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-gavel"></i> court case no.</label><input type="text" placeholder="case number" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> caveat file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload caveat</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save caveat</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-university"></i> mor-005: bank guarantee</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> guarantee no.</label><input type="text" placeholder="guarantee number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-university"></i> bank name</label><input type="text" placeholder="bank name" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> beneficiary</label><input type="text" placeholder="beneficiary name" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> guarantee amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> expiry date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> guarantee file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload guarantee</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save guarantee</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-percent"></i> mor-006: loan fee calculation</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> fee no.</label><input type="text" placeholder="fee number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> borrower name</label><input type="text" placeholder="borrower name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> loan amount</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-percent"></i> fee rate (1%)</label><input type="text" value="1%" readonly style="background:rgba(0,212,255,0.05);" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> fee amount</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> fee file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload fee file</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate fee</button><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save fee</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== CERTIFICATE SECTION ===== -->
+            <!-- ============================================================
+            CERTIFICATE SECTION (5 Forms)
+            ============================================================ -->
             <div id="section-certificate" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-certificate"></i> certificate & final documents</h2>
                     <p>5 forms for certificates and final documentation</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-certificate"></i> cert-001: certificate of title</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele</label><input type="text" placeholder="kebele" /></div>
-                        <div class="form-group"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-file"></i> certificate file</label>
-                            <div class="file-upload" onclick="this.querySelector('input').click()">
-                                <i class="fas fa-file-upload"></i>
-                                <small>upload certificate</small>
-                                <input type="file" accept=".pdf,.jpg,.png" />
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-certificate"></i> cert-001: certificate of title</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> owner name</label><input type="text" placeholder="owner name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-map-pin"></i> kebele</label><input type="text" placeholder="kebele" /></div>
+                            <div class="form-group"><label><i class="fas fa-ruler-combined"></i> area (m²)</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-file"></i> certificate file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
                             </div>
                         </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> issue certificate</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> issue certificate</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-search"></i> cert-002: parcel search certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> search no.</label><input type="text" placeholder="search number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> search date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> requester name</label><input type="text" placeholder="requester name" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> search result</label>
+                                <select><option>clear</option><option>encumbered</option><option>under dispute</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> search file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload search result</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save search</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-invoice"></i> cert-003: encumbrance certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> issue date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> encumbrance status</label>
+                                <select><option>clear</option><option>mortgage</option><option>charge</option><option>caveat</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> certificate file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save certificate</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-check-circle"></i> cert-004: registration certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> certificate no.</label><input type="text" placeholder="certificate number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> registration date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> registrant name</label><input type="text" placeholder="registrant name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> certificate file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload certificate</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-map"></i> cert-005: map approval certificate</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> approval no.</label><input type="text" placeholder="approval number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> approval date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-map"></i> map sheet no.</label><input type="text" placeholder="sheet number" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> surveyor name</label><input type="text" placeholder="surveyor name" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> map file</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-map"></i>
+                                    <small>upload map</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save approval</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== ARCHIVE SECTION ===== -->
+            <!-- ============================================================
+            ARCHIVE SECTION (5 Forms)
+            ============================================================ -->
             <div id="section-archive" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-archive"></i> archive & management</h2>
                     <p>5 forms for file management, indexing, and retrieval</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-folder-open"></i> arc-001: parcel folder</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> folder no.</label><input type="text" placeholder="folder number" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-folder"></i> folder location</label><input type="text" placeholder="shelf/rack" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> created date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-file"></i> documents count</label><input type="number" placeholder="0" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> officer name</label><input type="text" placeholder="officer name" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-pen"></i> folder contents</label><textarea rows="2"></textarea></div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-folder-open"></i> arc-001: parcel folder</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> folder no.</label><input type="text" placeholder="folder number" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-folder"></i> folder location</label><input type="text" placeholder="shelf/rack" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> created date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> documents count</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> officer name</label><input type="text" placeholder="officer name" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> folder contents</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save folder</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save folder</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-list"></i> arc-002: archive index</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> index no.</label><input type="text" placeholder="index number" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> document type</label>
+                                <select><option>title deed</option><option>survey</option><option>certificate</option><option>application</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> document no.</label><input type="text" placeholder="document number" /></div>
+                            <div class="form-group"><label><i class="fas fa-folder"></i> location</label><input type="text" placeholder="archive location" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save index</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-search"></i> arc-003: search request</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> request no.</label><input type="text" placeholder="request number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> request date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> requester name</label><input type="text" placeholder="requester name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> search type</label>
+                                <select><option>title search</option><option>encumbrance</option><option>full history</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> status</label>
+                                <select><option>pending</option><option>processing</option><option>completed</option></select>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> results</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save request</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-file-export"></i> arc-004: document retrieval</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> retrieval no.</label><input type="text" placeholder="retrieval number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> officer name</label><input type="text" placeholder="officer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> document type</label>
+                                <select><option>original</option><option>copy</option><option>certified copy</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> retrieved</label>
+                                <select><option>yes</option><option>no</option></select>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save</button></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-arrow-right"></i> arc-005: archive transfer</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> transfer no.</label><input type="text" placeholder="transfer number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> transfer date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-folder"></i> from location</label><input type="text" placeholder="current location" /></div>
+                            <div class="form-group"><label><i class="fas fa-folder"></i> to location</label><input type="text" placeholder="new location" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> officer name</label><input type="text" placeholder="officer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> status</label>
+                                <select><option>pending</option><option>in progress</option><option>completed</option></select>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save transfer</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== CUSTOMER SECTION ===== -->
+            <!-- ============================================================
+            CUSTOMER SECTION (5 Forms)
+            ============================================================ -->
             <div id="section-customer" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-headset"></i> customer service & tracking</h2>
                     <p>5 forms for customer service, feedback, and amendments</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-clock"></i> csr-001: application status</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-hashtag"></i> tracking no.</label><input type="text" placeholder="tracking number" /></div>
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> request date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-user"></i> applicant name</label><input type="text" placeholder="applicant name" /></div>
-                        <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
-                        <div class="form-group"><label><i class="fas fa-check-circle"></i> status</label>
-                            <select><option>submitted</option><option>under review</option><option>approved</option><option>rejected</option></select>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-clock"></i> csr-001: application status</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> tracking no.</label><input type="text" placeholder="tracking number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> request date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> applicant name</label><input type="text" placeholder="applicant name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> status</label>
+                                <select><option>submitted</option><option>under review</option><option>approved</option><option>rejected</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-clock"></i> estimated completion</label><input type="date" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> comments</label><textarea rows="2"></textarea></div>
                         </div>
-                        <div class="form-group"><label><i class="fas fa-clock"></i> estimated completion</label><input type="date" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-pen"></i> comments</label><textarea rows="2"></textarea></div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save status</button></div>
                     </div>
-                    <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save status</button></div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-comment"></i> csr-002: customer feedback</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> feedback no.</label><input type="text" placeholder="feedback number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> customer name</label><input type="text" placeholder="customer name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> phone</label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
+                            <div class="form-group"><label><i class="fas fa-star"></i> rating</label>
+                                <select><option>1 - very poor</option><option>2 - poor</option><option>3 - average</option><option>4 - good</option><option>5 - excellent</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> service type</label>
+                                <select><option>registration</option><option>transfer</option><option>certificate</option><option>enquiry</option></select>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> feedback</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> save feedback</button></div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-exclamation-triangle"></i> csr-003: complaint form</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> complaint no.</label><input type="text" placeholder="complaint number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> complainant name</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> phone</label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> issue type</label>
+                                <select><option>delay</option><option>error</option><option>service quality</option><option>other</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> description</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> submit complaint</button></div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-edit"></i> csr-004: amendment request</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> request no.</label><input type="text" placeholder="request number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> applicant name</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-tag"></i> amendment type</label>
+                                <select><option>name correction</option><option>parcel details</option><option>address change</option><option>other</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> supporting document</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload document</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> description</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> submit request</button></div>
+                    </div>
+                </div>
+
+                <div style="margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-gavel"></i> csr-005: appeal form</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-hashtag"></i> appeal no.</label><input type="text" placeholder="appeal number" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-user"></i> appellant name</label><input type="text" placeholder="name" /></div>
+                            <div class="form-group"><label><i class="fas fa-phone"></i> phone</label><input type="text" placeholder="+251 9xx xxx xxx" /></div>
+                            <div class="form-group"><label><i class="fas fa-barcode"></i> parcel id</label><input type="text" placeholder="parcel id" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> decision appealed</label><input type="text" placeholder="decision reference" /></div>
+                            <div class="form-group"><label><i class="fas fa-file"></i> supporting documents</label>
+                                <div class="file-upload" onclick="this.querySelector('input').click()">
+                                    <i class="fas fa-file-upload"></i>
+                                    <small>upload documents</small>
+                                    <input type="file" accept=".pdf,.jpg,.png" multiple />
+                                </div>
+                            </div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> grounds of appeal</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group"><button class="btn btn-success" onclick="saveFormData()"><i class="fas fa-save"></i> submit appeal</button></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ===== REPORTS SECTION ===== -->
+            <!-- ============================================================
+            REPORTS SECTION (6 Forms)
+            ============================================================ -->
             <div id="section-reports" class="form-section">
                 <div class="page-header">
                     <h2><i class="fas fa-chart-bar"></i> reports & statistics</h2>
                     <p>6 forms for daily, monthly, quarterly, and annual reports</p>
                 </div>
-                <div class="form-container">
-                    <div class="form-title"><i class="fas fa-calendar-day"></i> rpt-001: daily registration report</div>
-                    <div class="form-grid" style="grid-template-columns:1fr 1fr;">
-                        <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
-                        <div class="form-group"><label><i class="fas fa-file-alt"></i> total registrations</label><input type="number" placeholder="0" /></div>
-                        <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total revenue</label><input type="number" placeholder="0.00" /></div>
-                        <div class="form-group"><label><i class="fas fa-check-circle"></i> approved</label><input type="number" placeholder="0" /></div>
-                        <div class="form-group"><label><i class="fas fa-clock"></i> pending</label><input type="number" placeholder="0" /></div>
-                        <div class="form-group"><label><i class="fas fa-times-circle"></i> rejected</label><input type="number" placeholder="0" /></div>
-                        <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-calendar-day"></i> rpt-001: daily registration report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-file-alt"></i> total registrations</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total revenue</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> approved</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-clock"></i> pending</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-times-circle"></i> rejected</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                            <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
+                            <button class="btn btn-csv" onclick="exportToCSV()"><i class="fas fa-file-csv"></i> csv</button>
+                            <button class="btn btn-print" onclick="window.print()"><i class="fas fa-print"></i> print</button>
+                        </div>
                     </div>
-                    <div class="btn-group">
-                        <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
-                        <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
-                        <button class="btn btn-csv" onclick="exportToCSV()"><i class="fas fa-file-csv"></i> csv</button>
-                        <button class="btn btn-print" onclick="window.print()"><i class="fas fa-print"></i> print</button>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-calendar-alt"></i> rpt-002: monthly registration report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar-alt"></i> month</label>
+                                <select><option>january</option><option>february</option><option>march</option><option>april</option><option>may</option><option>june</option><option>july</option><option>august</option><option>september</option><option>october</option><option>november</option><option>december</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-calendar-alt"></i> year</label><input type="number" placeholder="2026" /></div>
+                            <div class="form-group"><label><i class="fas fa-file-alt"></i> total registrations</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total revenue</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> approved</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-clock"></i> pending</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                            <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
+                            <button class="btn btn-csv" onclick="exportToCSV()"><i class="fas fa-file-csv"></i> csv</button>
+                            <button class="btn btn-print" onclick="window.print()"><i class="fas fa-print"></i> print</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-calendar-week"></i> rpt-003: quarterly report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar-alt"></i> quarter</label>
+                                <select><option>q1 (jan-mar)</option><option>q2 (apr-jun)</option><option>q3 (jul-sep)</option><option>q4 (oct-dec)</option></select>
+                            </div>
+                            <div class="form-group"><label><i class="fas fa-calendar-alt"></i> year</label><input type="number" placeholder="2026" /></div>
+                            <div class="form-group"><label><i class="fas fa-file-alt"></i> total registrations</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total revenue</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-chart-bar"></i> by category</label><input type="text" placeholder="residential: 50, commercial: 30" /></div>
+                            <div class="form-group"><label><i class="fas fa-check-circle"></i> approved</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-clock"></i> pending</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                            <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
+                            <button class="btn btn-csv" onclick="exportToCSV()"><i class="fas fa-file-csv"></i> csv</button>
+                            <button class="btn btn-print" onclick="window.print()"><i class="fas fa-print"></i> print</button>
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-money-bill-wave"></i> rpt-004: revenue collection report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> start date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> end date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> registration fees</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> land taxes</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> transfer fees</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total revenue</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><input type="text" /></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button>
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                            <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px;">
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-tags"></i> rpt-005: land use statistics</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> year</label><input type="number" placeholder="2026" /></div>
+                            <div class="form-group"><label><i class="fas fa-building"></i> residential</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-store"></i> commercial</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-industry"></i> industrial</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-tree"></i> agricultural</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-university"></i> institutional</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-vector-square"></i> total</label><input type="text" readonly style="background:rgba(0,212,255,0.05); color:#00d4ff; font-weight:bold;" /></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-primary"><i class="fas fa-calculator"></i> calculate</button>
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                        </div>
+                    </div>
+                    <div class="form-container">
+                        <div class="form-title"><i class="fas fa-handshake"></i> rpt-006: transfer & transaction report</div>
+                        <div class="form-grid" style="grid-template-columns:1fr 1fr;">
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> start date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-calendar"></i> end date</label><input type="date" /></div>
+                            <div class="form-group"><label><i class="fas fa-handshake"></i> total transfers</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-handshake"></i> sales</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-gift"></i> gifts</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-tree"></i> inheritances</label><input type="number" placeholder="0" /></div>
+                            <div class="form-group"><label><i class="fas fa-money-bill-wave"></i> total value</label><input type="number" placeholder="0.00" /></div>
+                            <div class="form-group full-width"><label><i class="fas fa-pen"></i> remarks</label><textarea rows="2"></textarea></div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-pdf" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> pdf</button>
+                            <button class="btn btn-excel" onclick="exportToExcel()"><i class="fas fa-file-excel"></i> excel</button>
+                            <button class="btn btn-print" onclick="window.print()"><i class="fas fa-print"></i> print</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -908,7 +2129,7 @@
     </div>
 
     <!-- ===== BOTTOM BAR ===== -->
-    <footer class="bottom-bar" id="bottomBar" style="display:none;">
+    <footer class="bottom-bar" id="bottomBar">
         <div class="status">
             <span><span class="dot"></span> system active</span>
             <span><i class="fas fa-layer-group"></i> total: <strong id="totalRecordsBottom">74</strong> forms</span>
@@ -938,8 +2159,8 @@
 
         // ===== DEFAULT ADMINS =====
         const defaultUsers = [
-            { username: 'iliyas', password: 'mu1234c', fullName: 'iliyas abdi', role: 'admin' },
-            { username: 'mohamed', password: 'mo12345m', fullName: 'mohamed mohamud', role: 'admin' }
+            { username: 'iliyas', password: 'mu1234', fullName: 'iliyas abdi', role: 'admin' },
+            { username: 'mohamed', password: 'mo1234', fullName: 'mohamed mohamud', role: 'admin' }
         ];
 
         function getUsers() {
@@ -1177,7 +2398,7 @@
                 const data = formData.length > 0 ? formData : [{ id: 1, date: new Date().toISOString(), user: 'sample', data: 'sample data' }];
                 const wb = XLSX.utils.book_new();
                 const ws = XLSX.utils.json_to_sheet(data);
-                XLSX.utils.book_append_sheet(wb, ws, 'Cadastral Data');
+                XLSX.utils.book_append_sheet(wb, ws, 'cadastral data');
                 XLSX.writeFile(wb, 'tog_wajaale_cadastral_data_' + new Date().toISOString().slice(0, 10) + '.xlsx');
                 alert('✅ excel file exported successfully!');
             } catch(e) {
@@ -1208,7 +2429,7 @@
                 doc.text('utm zone 38n', pageWidth / 2, y, { align: 'center' });
                 y += 15;
 
-                const headers = [['#', 'Date', 'User', 'Record']];
+                const headers = [['#', 'date', 'user', 'record']];
                 const rows = formData.length > 0 ?
                     formData.map((r, i) => [i + 1, new Date(r.date).toLocaleDateString(), r.user || '-', r.data || '-']) :
                     [['1', new Date().toLocaleDateString(), 'system', 'sample data']];
@@ -1283,9 +2504,9 @@
             document.getElementById('mainHeader').style.display = 'none';
             document.getElementById('mainContent').style.display = 'none';
             document.getElementById('bottomBar').style.display = 'none';
-            console.log('🏛️ tog-wajaale-cadastral-registration-system');
-            console.log('📧 email: togwajaaleadmin06@gmail.com');
-            console.log('📋 default admins: iliyas/mu1234c, mohamed/mo12345m');
+            console.log('🏛️ tog-wajaale cadastral registration system');
+            console.log('📧 email: xafiiskadeegbixinta06@gmail.com');
+            console.log('📋 default admins: iliyas/mu1234, mohamed/mo1234');
         });
     </script>
 </body>
