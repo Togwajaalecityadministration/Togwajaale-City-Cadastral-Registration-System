@@ -7,7 +7,7 @@
   <h2 style="background: linear-gradient(135deg, #00d4ff, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: -5px;">Cadastral Registration System</h2>
   
   <p>
-    <strong>📍 UTM Zone 38N | Tog-Wajaale, Ethiopia</strong><br>
+    <strong>📍Cordinate System/UTM/Zone38N| Tog-Wajaale, Ethiopia</strong><br>
     <strong>📧</strong> togwajaaleadmin06@gmail.com<br>
     <strong>📞</strong> +251 915 955 925
   </p>
@@ -16,9 +16,9 @@
     <img src="https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge&logo=github" alt="Version">
     <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status">
     <img src="https://img.shields.io/badge/Security-Hardened-red?style=for-the-badge&logo=shield" alt="Security">
-    <img src="https://img.shields.io/badge/UTM-Zone%2038N-orange?style=for-the-badge&logo=map" alt="UTM Zone">
-    <img src="https://img.shields.io/badge/Forms-74-success?style=for-the-badge&logo=book" alt="Forms">
-    <img src="https://img.shields.io/badge/Categories-12-blueviolet?style=for-the-badge&logo=grid" alt="Categories">
+    <img src="https://img.shields.io/badge/UTM-Zone%2038N-orange?style=for-the-badge&logo=map" alt="Cordinate System/UTM/Zone38N">
+    <img src="https://img.shields.io/badge/Forms-success?style=for-the-badge&logo=book" alt="Forms">
+    <img src="https://img.shields.io/badge/Categories-blueviolet?style=for-the-badge&logo=grid" alt="Categories">
   </p>
 </div>
 
