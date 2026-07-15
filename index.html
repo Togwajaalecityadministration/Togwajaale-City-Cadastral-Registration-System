@@ -410,13 +410,13 @@
                 <div class="form-group">
                     <label><i class="fas fa-user"></i> username <small style="color:rgba(255,255,255,0.3);">(small letters only)</small></label>
                     <input type="text" id="loginUsername" placeholder="enter your username" />
-                    <div class="prediction-text">💡 e.g. muktar, mohamed, or your username</div>
+                    <div class="prediction-text">💡 e.g. iliyas, mohamed, or your username</div>
                 </div>
                 <div class="form-group">
                     <label><i class="fas fa-lock"></i> password <small style="color:rgba(255,255,255,0.3);">(6+ chars, letters & numbers)</small></label>
                     <input type="password" id="loginPassword" placeholder="enter your password" style="padding-right:40px;" />
                     <i class="fas fa-eye toggle-password" id="loginPasswordToggle" onclick="togglePassword('loginPassword','loginPasswordToggle')"></i>
-                    <div class="prediction-text">💡 default: mu1234 (admin) or mo1234 (admin)</div>
+                    <div class="prediction-text">💡 default: mu1234c (admin) or mo12345m (admin)</div>
                 </div>
                 <button class="btn-primary" onclick="handleLogin()"><i class="fas fa-sign-in-alt"></i> login</button>
                 <div class="link-text">don't have an account? <a onclick="showRegister()">create account</a></div>
@@ -482,8 +482,8 @@
         <div class="brand">
             <img src="logo.png" alt="logo" onerror="this.style.display='none'" />
             <div>
-                <h1>tog-wajaale cadastral registration</h1>
-                <small>utm zone 38n • integrated management system</small>
+                <h1>tog-wajaale-cadastral-registration</h1>
+                <small>utm zone 38n • management system</small>
             </div>
         </div>
         <div class="header-actions">
@@ -576,25 +576,25 @@
                 </div>
                 <div class="category-grid">
                     <div class="category-card" style="border-left: 4px solid #00d4ff;">
-                        <div class="cat-icon">📋</div>
+                        <div class="cat-icon"></div>
                         <h3>total applications</h3>
                         <p>all registration applications</p>
                         <span class="cat-count">0 pending</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #00b894;">
-                        <div class="cat-icon">✅</div>
+                        <div class="cat-icon"></div>
                         <h3>approved registrations</h3>
                         <p>successfully registered</p>
                         <span class="cat-count">0 approved</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #f39c12;">
-                        <div class="cat-icon">💰</div>
+                        <div class="cat-icon"></div>
                         <h3>revenue collected</h3>
                         <p>total fees and taxes</p>
                         <span class="cat-count">0.00 etb</span>
                     </div>
                     <div class="category-card" style="border-left: 4px solid #ff6b6b;">
-                        <div class="cat-icon">📊</div>
+                        <div class="cat-icon"></div>
                         <h3>total parcels</h3>
                         <p>all registered parcels</p>
                         <span class="cat-count">0 parcels</span>
@@ -938,8 +938,8 @@
 
         // ===== DEFAULT ADMINS =====
         const defaultUsers = [
-            { username: 'muktar', password: 'mu1234', fullName: 'muktar ahmed', role: 'admin' },
-            { username: 'mohamed', password: 'mo1234', fullName: 'mohamed ali', role: 'admin' }
+            { username: 'iliyas', password: 'mu1234c', fullName: 'iliyas abdi', role: 'admin' },
+            { username: 'mohamed', password: 'mo12345m', fullName: 'mohamed mohamud', role: 'admin' }
         ];
 
         function getUsers() {
@@ -1285,7 +1285,7 @@
             document.getElementById('bottomBar').style.display = 'none';
             console.log('🏛️ tog-wajaale-cadastral-registration-system');
             console.log('📧 email: togwajaaleadmin06@gmail.com');
-            console.log('📋 default admins: iliyas/mu1234c, mohamed/mo1234m');
+            console.log('📋 default admins: iliyas/mu1234c, mohamed/mo12345m');
         });
     </script>
 </body>
